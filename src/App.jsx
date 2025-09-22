@@ -17,6 +17,16 @@ function App() {
     };
   }, []);
 
+  const getWindowDimensions = () => {
+    if (typeof window !== "undefined") {
+      return {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    }
+    return { width: 1024, height: 768 }; // fallback
+  };
+
   return (
     <div
       className={`h-screen w-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 ${
@@ -33,27 +43,30 @@ function App() {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: 0,
-            }}
-            animate={{
-              y: [null, -100],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeOut",
-            }}
-          />
-        ))}
+        {[...Array(20)].map((_, i) => {
+          const { width, height } = getWindowDimensions();
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white/20 rounded-full"
+              initial={{
+                x: Math.random() * width,
+                y: Math.random() * height,
+                opacity: 0,
+              }}
+              animate={{
+                y: [null, -100],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+                ease: "easeOut",
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Main Content */}

@@ -7,4 +7,21 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          motion: ['framer-motion'],
+          utils: ['axios']
+        }
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    host: true
+  }
 })
