@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Skeleton from "./components/Skeleton";
 import { ALL_SITE } from "./components/website";
+import PhotoFlow from "./components/PhotoFLow";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -169,6 +170,7 @@ function App() {
               </motion.div>
             </motion.div>
           ))}
+          <PhotoFlow />
         </motion.div>
       </div>
 
