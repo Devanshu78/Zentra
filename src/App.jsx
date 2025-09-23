@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Skeleton from "./components/Skeleton";
 import { ALL_SITE } from "./components/website";
 import PhotoFlow from "./components/PhotoFLow";
+import Expense from "./components/Expense";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -184,6 +185,7 @@ function App() {
             </motion.div>
           ))}
           <PhotoFlow />
+          <Expense />
         </motion.div>
       </div>
 

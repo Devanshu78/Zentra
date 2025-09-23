@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const photoflow = "https://photo-inventory-manager-annuthokvikreta.replit.app";
+const photoflow = "https://atvexpense.replit.app/";
 const icon = "📸";
-const title = "PhotoFlow";
-const description = "Smart photo management and processing";
+const title = "ATV Expense";
+const description =
+  "ATV Expense is a platform for managing your expenses and income.";
 
-function PhotoFlow() {
+function Expense() {
   return (
     <div className="p-4 sm:p-6 bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
       {/* Mobile Layout */}
@@ -177,4 +178,4 @@ function PhotoFlow() {
   );
 }
 
-export default PhotoFlow;
+export default Expense;
