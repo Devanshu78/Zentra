@@ -1,5 +1,4 @@
 import { useState, useEffect, lazy, Suspense } from "react";
-import { usePerformance } from "./usePerformance";
 
 // Lazy load components for better performance
 const Skeleton = lazy(() => import("./components/Skeleton"));
@@ -9,7 +8,6 @@ import { ALL_SITE } from "./components/website";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const { isMobile } = usePerformance();
 
   useEffect(() => {
     // Immediate loading - no delays
@@ -58,7 +56,6 @@ function App() {
                     BASE_URL1={site.BASE_URL1}
                     BASE_URL2={site.BASE_URL2}
                     REDIRECT_URL={site.REDIRECT_URL}
-                    isMobile={isMobile}
                   />
                 </Suspense>
               </div>
@@ -68,13 +65,13 @@ function App() {
           <Suspense
             fallback={<div className="p-6 h-24 bg-white/5 rounded-xl" />}
           >
-            <PhotoFlow isMobile={isMobile} />
+            <PhotoFlow />
           </Suspense>
 
           <Suspense
             fallback={<div className="p-6 h-24 bg-white/5 rounded-xl" />}
           >
-            <Expense isMobile={isMobile} />
+            <Expense />
           </Suspense>
         </div>
       </div>

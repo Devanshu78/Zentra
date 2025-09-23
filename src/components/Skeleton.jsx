@@ -9,7 +9,6 @@ const Skeleton = memo(function Skeleton({
   BASE_URL1,
   BASE_URL2,
   REDIRECT_URL,
-  isMobile = false,
 }) {
   const [credentials, setCredentials] = useState({
     email: "",
@@ -105,7 +104,6 @@ const Skeleton = memo(function Skeleton({
               handleCredentials={handleCredentials}
               credentials={credentials}
               setCredentials={setCredentials}
-              isMobile={isMobile}
             />
           )}
 
@@ -119,13 +117,13 @@ const Skeleton = memo(function Skeleton({
               <div className="flex space-x-2">
                 <button
                   onClick={handleBankRedirect}
-                  className="flex-1 bg-gradient-to-r cursor-pointer from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-3 py-2 rounded-lg transition-all duration-200 text-xs font-medium smooth-scale shadow-md hover:shadow-blue-500/25"
+                  className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-3 py-2 rounded-lg transition-all duration-200 text-xs font-medium smooth-scale shadow-md hover:shadow-blue-500/25"
                 >
                   Open
                 </button>
                 <button
                   onClick={clearCredentials}
-                  className="flex-1 bg-gradient-to-r cursor-pointer from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-3 py-2 rounded-lg transition-all duration-200 text-xs font-medium smooth-scale shadow-md hover:shadow-red-500/25"
+                  className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-3 py-2 rounded-lg transition-all duration-200 text-xs font-medium smooth-scale shadow-md hover:shadow-red-500/25"
                 >
                   Disconnect
                 </button>
@@ -157,7 +155,7 @@ const Skeleton = memo(function Skeleton({
           {!isLoggedIn && !showForm && (
             <button
               onClick={() => setShowForm(true)}
-              className="bg-gradient-to-r cursor-pointer from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-lg transition-all duration-200 font-medium smooth-scale shadow-lg hover:shadow-green-500/25"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-lg transition-all duration-200 font-medium smooth-scale shadow-lg hover:shadow-green-500/25"
             >
               Setup Auto Login
             </button>
@@ -169,7 +167,6 @@ const Skeleton = memo(function Skeleton({
               handleCredentials={handleCredentials}
               credentials={credentials}
               setCredentials={setCredentials}
-              isMobile={isMobile}
             />
           )}
 
@@ -181,13 +178,13 @@ const Skeleton = memo(function Skeleton({
               <div className="flex space-x-2">
                 <button
                   onClick={handleBankRedirect}
-                  className="bg-gradient-to-r cursor-pointer from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium smooth-scale shadow-md hover:shadow-blue-500/25"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium smooth-scale shadow-md hover:shadow-blue-500/25"
                 >
                   Open
                 </button>
                 <button
                   onClick={clearCredentials}
-                  className="bg-gradient-to-r cursor-pointer from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium smooth-scale shadow-md hover:shadow-red-500/25"
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium smooth-scale shadow-md hover:shadow-red-500/25"
                 >
                   Disconnect
                 </button>
